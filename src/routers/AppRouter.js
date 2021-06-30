@@ -11,6 +11,8 @@ import RegisterPage from "../pages/RegisterPage";
 import DashboardPage from "../pages/DashboardPage";
 import PaymentPage from "../pages/PaymentPage";
 import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
+
 import Navbar from "../components/Navbar";
 
 
@@ -30,11 +32,11 @@ export default function AppRouter() {
           <Redirect to="/login"/>
         </Route>
 
-        <Route exact path="/login" component={LoginPage}/>
-        <Route exact path="/register" component={RegisterPage}/>
+        <PublicRoute exact path="/login" component={LoginPage}/>
+        <PublicRoute exact path="/register" component={RegisterPage}/>
 
         <PrivateRoute exact path="/dashboard" component={DashboardPage}/>
-        <Route exact path="/payments" component={PaymentPage}/>
+        <PrivateRoute exact path="/payments" component={PaymentPage}/>
 
         <Route path="*" component={NotFoundPage} />
       </Switch>
