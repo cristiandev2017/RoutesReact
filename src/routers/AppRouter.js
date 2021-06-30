@@ -5,6 +5,7 @@ import ContactPage from "../pages/ContactPage";
 import HomePage from "../pages/HomePage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ProfilePage from "../pages/ProfilePage";
+import CategoriesPage from "../pages/CategoriesPage";
 import Navbar from "../components/Navbar";
 
 export default function AppRouter() {
@@ -16,7 +17,8 @@ export default function AppRouter() {
         <Route path="/contact" component={ContactPage}/>
         <Route exact path="/" component={HomePage}/>
 
-         <Route exact path="/profile/:username" component={ProfilePage}/>
+        <Route exact path="/profile/:username" component={ProfilePage}/>
+        <Route exact path="/categories" component={CategoriesPage}/>
 
         <Route path="*" component={NotFoundPage} />
       </Switch>
